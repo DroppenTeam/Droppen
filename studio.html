@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Droppen Studio</title>
+    <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/jrGZFbjENQZ3bNfb9jiD4jwCkeRizE7yZy2U63R95sbJSm0S6I_-l0hviiZBMDmkx6TtIGeySHJWuVj_ApTbD8E=w1280">
+    <style>
+      body {
+        background-color: #333333;
+        color: #ffffff;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        text-align: center;
+      }
+      form {
+        margin: 45 auto;
+        width: 100%;
+      }
+      textarea {
+        display: block;
+        margin: 0 auto;
+      }
+      button {
+        background-color: #ff0000;
+        color: #ffffff;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+      #editor-buttons {
+        margin-top: 20px;
+      }
+      .editor-button {
+        background-color: #333333;
+        color: #ffffff;
+        border: none;
+        padding: 5px 10px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .editor-button:hover {
+        background-color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Droppen Studio</h1>
+    <form>
+      <textarea id="html-input" rows="10" cols="50"></textarea>
+      <br>
+      <button type="big-button" onclick="openPreview()">Run</button>
+    </form>
+    <div id="editor-buttons">
+      <button class="editor-button" onclick="formatText('bold')">Bold</button>
+      <button class="editor-button" onclick="formatText('italic')">Italic</button>
+      <button class="editor-button" onclick="formatText('underline')">Underline</button>
+    </div>
+<script>
+  function openPreview() {
+    var html = document.getElementById("html-input").value;
+    var newWindow = window.open();
+    newWindow.document.write(html);
+  }
+  
+  function formatText(command) {
+    document.execCommand(command, false, null);
+  }
+</script>
+<h1><center>Make sure your script is correct!!</center></h1>
+
+  </body>
+</html>    
+      
