@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  <title>Droppen</title>
+  <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/-IxjmgRbvjL3etZPEihVBwohJZj-bzZNzrfwVh2Tpz8pJGfHXkLUYCHzn1GeeXN40MhimxZGeFylepo9Rxe2yXa2oSBYbPvnrRExt8YrB9oCECmL25nS0TMOT5yAdHxP7g=w1280">
+  
+  <style>
+    /* Add styles for the navigation bar */
+    nav {
+      background-color: rgb(56, 154, 207);
+      height: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 20px;
+    }
+    
+    /* Add styles for the navigation links */
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      margin-right: 10px;
+      font-family: Calibri, sans-serif;
+    }
+    
+    /* Add styles for the active navigation link */
+    nav a.active {
+      font-weight: bold;
+    }
+    
+    /* Add styles for the buttons */
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Add styles for the button links */
+    .nav-buttons a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      margin-right: 10px;
+      font-family: Calibri, sans-serif;
+    }
+    
+    /* Add styles for the active button link */
+    .nav-buttons a.active {
+      font-weight: bold;
+    }
+    
+    /* Add styles for the greeting text */
+    #greeting {
+      font-size: 24px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin-top: 50px;
+      text-align: center;
+    }
+    
+    /* Add styles for the logo */
+    nav img {
+      max-width: 20%;
+      height: auto;
+    }
+    
+    /* Add styles for the big button */
+    #big-button {
+      display: block;
+      margin: 50px auto;
+      background-color: rgb(56, 154, 207);
+      color: white;
+      padding: 20px 40px;
+      font-size: 24px;
+      font-family: Calibri, sans-serif;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="home.html" class="active">Home</a>
+    <a href="game.html">Games</a>
+    <a href="create.html">Create</a>
+  </nav>
+  
+  <div id="greeting">
+    <h1><b>Falling Block Game</b></h1>
+  </di>
+  <!DOCTYPE html>
+<html>
+<head>
+	<title>Falling Block Game</title>
+	<style>
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		const canvas = document.getElementById("canvas");
+		const ctx = canvas.getContext("2d");
+
+		// Block properties
+		let blockX = 0;
+		let blockY = 0;
+		let blockWidth = 50;
+		let blockHeight = 50;
+		let blockColor = "#FF0000";
+		let isDragging = false;
+
+		// Draw the block
+		function drawBlock() {
+			ctx.fillStyle = blockColor;
+			ctx.fillRect(blockX, blockY, blockWidth, blockHeight);
+		}
+
+		// Clear the canvas
+		function clearCanvas() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+
+		// Move the block down
+		function moveBlock() {
+			blockY += 10;
+		}
+
+		// Handle mouse down event
+		canvas.addEventListener("mousedown", function(event) {
+			if (event.offsetX >= blockX && event.offsetX <= blockX + blockWidth
+				&& event.offsetY >= blockY && event.offsetY <= blockY + blockHeight) {
+				isDragging = true;
+			}
+		});
+
+		// Handle mouse move event
+		canvas.addEventListener("mousemove", function(event) {
+			if (isDragging) {
+				blockX = event.offsetX - blockWidth / 2;
+				blockY = event.offsetY - blockHeight / 2;
+			}
+		});
+
+		// Handle mouse up event
+		canvas.addEventListener("mouseup", function(event) {
+			isDragging = false;
+		});
+
+		// Game loop
+		function gameLoop() {
+			clearCanvas();
+			drawBlock();
+			moveBlock();
+
+			// Check if block has hit the floor
+			if (blockY + blockHeight >= canvas.height) {
+				blockY = canvas.height - blockHeight;
+			}
+
+			window.requestAnimationFrame(gameLoop);
+		}
+
+		// Start the game loop
+		window.requestAnimationFrame(gameLoop);
+	</script>
+</body>
+</html>
+</html>
