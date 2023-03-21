@@ -49,7 +49,15 @@
     .nav-buttons a.active {
       font-weight: bold;
     }
-       
+    
+    /* Add styles for the greeting text */
+    #greeting {
+      font-size: 24px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin-top: 50px;
+      text-align: center;
+    }
+    
     /* Add styles for the logo */
     nav img {
       max-width: 20%;
@@ -73,16 +81,60 @@
 </head>
 <body>
   <nav>
-    <a href="home.html">Home</a>
-    <a href="game.html">Games</a>
-    <a href="create.html" class="active">Create</a>
   </nav>
+
+
+  <style>
+    /* Center the form horizontally and vertically */
+    form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      font-size: 24px;
+      padding: 20px;
+      margin: 0 auto;
+    }
   
-<center>
-    <h1><b>Droppen Studio</b></h1>
-    <button id="big-button" onclick="location.href='studio.html'">Create your game!</button>
-  </center>
-     <center><a href="https://forms.gle/tamwMhep4nHDVhoRA">Sumbit game!</a></center>
-    </div>
-</body>
-</html>
+    /* Style the labels and input fields */
+    label, input {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Style the submit button */
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      font-size: 20px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  
+  <form action="home.html" method="post">
+      <center>
+<h1><b>Sign Up</b></h1>
+Start Playing!!
+</center>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <input type="submit" value="Sign Up">
+  </form>
+  
+  
+  
+</html>  

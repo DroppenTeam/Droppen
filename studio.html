@@ -15,12 +15,11 @@
         width: 100%;
       }
       textarea {
-  display: block;
-  margin: 0 auto;
-  height: 300px;
-  width: 80%;
-}
-
+        display: block;
+        margin: 0 auto;
+        height: 300px;
+        width: 80%;
+      }
       button {
         background-color: #ff0000;
         color: #ffffff;
@@ -28,45 +27,64 @@
       }
       #editor-buttons {
         margin-top: 20px;
+        background-color: #666666;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
       }
       .editor-button {
         background-color: #333333;
         color: #ffffff;
         border: none;
         padding: 5px 10px;
-        margin-right: 10px;
+        margin-bottom: 10px;
         cursor: pointer;
       }
       .editor-button:hover {
         background-color: #ff0000;
       }
+      #editor-buttons button:first-child {
+        margin-top: 0;
+      }
     </style>
   </head>
   <body>
     <h1>Droppen Studio</h1>
-    <form>
-      <textarea id="html-input" rows="10" cols="50"></textarea>
-      <br>
-      <button type="big-button" onclick="openPreview()">Run</button>
-    </form>
     <div id="editor-buttons">
-      <button class="editor-button" onclick="formatText('bold')">Bold</button>
-      <button class="editor-button" onclick="formatText('italic')">Italic</button>
-      <button class="editor-button" onclick="formatText('underline')">Underline</button>
+      <button class="editor-button" onclick="clearContent()">Clear</button>
+      <button class="editor-button" onclick="document.execCommand('undo', false, null)">Undo</button>
+      <button class="editor-button" onclick="document.execCommand('redo', false, null)">Redo</button>
+      <button class="editor-button" onclick="addNewBlock()">New Block</button>
     </div>
-<script>
-  function openPreview() {
-    var html = document.getElementById("html-input").value;
-    var newWindow = window.open();
-    newWindow.document.write(html);
-  }
-  
-  function formatText(command) {
-    document.execCommand(command, false, null);
-  }
-</script>
-<h1><center>Make sure your script is correct!!</center></h1>
-
-  </body>
-</html>    
+    <form>
+      <textarea id="html-input"></textarea>
+      <br>
+      <button type="button" onclick="openPreview()">Run</button>
+    </form>
+    <script>
+      function openPreview() {
+        var html = document.getElementById("html-input").value;
+        var newWindow = window.open();
+        newWindow.document.write(html);
+      }
       
+      function clearContent() {
+        document.getElementById("html-input").value = "";
+      }
+
+      function addNewBlock() {
+        var htmlInput = document.getElementById("html-input");
+        var existingValue = htmlInput.value;
+        var newBlock = '<div class="block"></div>';
+        htmlInput.value = existingValue + newBlock;
+      }
+    </script>
+    <h1><center>Make sure your script is correct!!</center></h1>
+  </body>
+</html>
