@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  <title>Droppen</title>
+  <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/-IxjmgRbvjL3etZPEihVBwohJZj-bzZNzrfwVh2Tpz8pJGfHXkLUYCHzn1GeeXN40MhimxZGeFylepo9Rxe2yXa2oSBYbPvnrRExt8YrB9oCECmL25nS0TMOT5yAdHxP7g=w1280">
+  
+  <style>
+    /* Add styles for the navigation bar */
+    nav {
+      background-color: rgb(56, 154, 207);
+      height: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 20px;
+    }
+    
+    /* Add styles for the navigation links */
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      margin-right: 10px;
+      font-family: Calibri, sans-serif;
+    }
+    
+    /* Add styles for the active navigation link */
+    nav a.active {
+      font-weight: bold;
+    }
+    
+    /* Add styles for the buttons */
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Add styles for the button links */
+    .nav-buttons a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      margin-right: 10px;
+      font-family: Calibri, sans-serif;
+    }
+    
+    /* Add styles for the active button link */
+    .nav-buttons a.active {
+      font-weight: bold;
+    }
+       
+    /* Add styles for the logo */
+    nav img {
+      max-width: 20%;
+      height: auto;
+    }
+    
+    /* Add styles for the big button */
+    #big-button {
+      display: block;
+      margin: 50px auto;
+      background-color: rgb(56, 154, 207);
+      color: white;
+      padding: 20px 40px;
+      font-size: 24px;
+      font-family: Calibri, sans-serif;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="home.html" class="active">Home</a>
+    <a href="game.html">Games</a>
+    <a href="create.html">Create</a>
+  </nav>
+
+  <center>
+    <h1><b>Clicker Game</b></h1>
+</di>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clicker Game</title>
+	<style>
+		#block {
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			margin: 50px auto;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="block" onclick="incrementScore()"></div>
+	<p>Score: <span id="score">0</span></p>
+	
+	<script>
+		var score = 0;
+		function incrementScore() {
+			score++;
+			document.getElementById("score").innerHTML = score;
+		}
+	</script>
+</body>
+</html>
+
+  </center>
