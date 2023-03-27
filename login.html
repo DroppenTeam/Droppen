@@ -77,12 +77,6 @@
       transition: all 0.2s ease-in-out;
     }
     
-    #signup-form input[type="submit"]:hover {
-      background-color: #005ea2;
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-    
     .error-message {
       color: red;
       margin-top: 10px;
@@ -91,5 +85,16 @@
     }
 
   </style>
-  
+    <body>
+        <h1>Login</h1>
+        <form method="POST" action="home2.html">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+          <br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <br>
+          <button type="submit">Log in</button>
+        </form>
+      </body>
 </html>

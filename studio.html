@@ -2,89 +2,49 @@
 <html>
   <head>
     <title>Droppen Studio</title>
-    <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/jrGZFbjENQZ3bNfb9jiD4jwCkeRizE7yZy2U63R95sbJSm0S6I_-l0hviiZBMDmkx6TtIGeySHJWuVj_ApTbD8E=w1280">
     <style>
+      /* Dark mode CSS */
       body {
-        background-color: #333333;
-        color: #ffffff;
-        font-family: "Comic Sans MS", cursive, sans-serif;
-        text-align: center;
+        background-color: #1d1d1d;
+        color: #fff;
+        font-family: Arial, sans-serif;
       }
-      form {
-        margin: 45 auto;
-        width: 100%;
-      }
+      
+      /* Textarea styles */
       textarea {
-        display: block;
-        margin: 0 auto;
+        width: 100%;
         height: 300px;
-        width: 80%;
-      }
-      button {
-        background-color: #ff0000;
-        color: #ffffff;
-        font-family: "Comic Sans MS", cursive, sans-serif;
-      }
-      #editor-buttons {
-        margin-top: 20px;
-        background-color: #666666;
-        height: 100%;
-        position: fixed;
-        left: 0;
-        top: 0;
-        padding-top: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-      }
-      .editor-button {
-        background-color: #333333;
-        color: #ffffff;
+        padding: 10px;
         border: none;
-        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 16px;
         margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      
+      /* Button styles */
+      button {
+        background-color: red;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
         cursor: pointer;
-      }
-      .editor-button:hover {
-        background-color: #ff0000;
-      }
-      #editor-buttons button:first-child {
-        margin-top: 0;
       }
     </style>
   </head>
   <body>
     <h1>Droppen Studio</h1>
-    <div id="editor-buttons">
-      <button class="editor-button" onclick="clearContent()">Clear</button>
-      <button class="editor-button" onclick="document.execCommand('undo', false, null)">Undo</button>
-      <button class="editor-button" onclick="document.execCommand('redo', false, null)">Redo</button>
-      <button class="editor-button" onclick="addNewBlock()">New Block</button>
-    </div>
-    <form>
-      <textarea id="html-input"></textarea>
-      <br>
-      <button type="button" onclick="openPreview()">Run</button>
-    </form>
+    <textarea id="editor"></textarea>
+    <button onclick="runCode()">Run</button>
+    
     <script>
-      function openPreview() {
-        var html = document.getElementById("html-input").value;
-        var newWindow = window.open();
-        newWindow.document.write(html);
-      }
-      
-      function clearContent() {
-        document.getElementById("html-input").value = "";
-      }
-
-      function addNewBlock() {
-        var htmlInput = document.getElementById("html-input");
-        var existingValue = htmlInput.value;
-        var newBlock = '<div class="block"></div>';
-        htmlInput.value = existingValue + newBlock;
+      function runCode() {
+        var code = document.getElementById("editor").value;
+        var newTab = window.open();
+        newTab.document.write(code);
       }
     </script>
-    <h1><center>Make sure your script is correct!!</center></h1>
   </body>
 </html>
