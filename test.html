@@ -1,0 +1,22 @@
+<a href="#" class="square-button">
+    <img src="https://lh3.googleusercontent.com/TtgRrj7eNeAcurnwLFYxnjKdpYaDmAI1aUn0JD6Nyl9UqTRW2YjGKoVVNfqrLg5zWFyVBGPdavTJW9er_7FAhCg" alt="Your Image">
+    <h2>Your Title</h2>
+    <div class="overlay">
+      <i class="fas fa-play"></i>
+      <i class="fas fa-heart"></i>
+    </div>
+  </a>
+  
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .square-button { display: inline-block; width: 200px; height: 200px; position: relative; border: none; background-color: transparent; text-align: center; overflow: hidden; }
+    .square-button img { width: 100%; height: 100%; object-fit: cover; }
+    .square-button h2 { position: absolute; bottom: 0; left: 0; width: 100%; margin: 0; padding: 10px; background-color: rgba(0, 0, 0, 0.5); color: #fff; font-size: 16px; font-family: Arial, sans-serif; }
+    .square-button:hover h2 { background-color: rgba(0, 0, 0, 0.8); }
+    .square-button .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; }
+    .square-button:hover .overlay { opacity: 1; }
+    .square-button .overlay i { font-size: 50px; color: #fff; margin: 0 10px; cursor: pointer; transition: transform 0.3s ease; }
+    .square-button .overlay i:hover { transform: scale(1.2); }
+    .square-button .overlay i.fa-heart:hover { color: red; }
+  </style>
+  

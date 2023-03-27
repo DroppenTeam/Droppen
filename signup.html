@@ -1,95 +1,61 @@
-<!DOCTYPE html>
 <html> 
 <head>
   <title>Droppen</title>
   <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/-IxjmgRbvjL3etZPEihVBwohJZj-bzZNzrfwVh2Tpz8pJGfHXkLUYCHzn1GeeXN40MhimxZGeFylepo9Rxe2yXa2oSBYbPvnrRExt8YrB9oCECmL25nS0TMOT5yAdHxP7g=w1280">
-  <style>
-        body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      text-align: center;
-    }
+  <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    </head>
+    <body bgcolor="transparent" text="#333333" link="#6666FF" alink="#6666FF" vlink="#6666FF" background="" >
+    <!-- 64099 -->
+    <center>
+    <div style="box-sizing: border-box; display: inline-block; width: auto; max-width: 600px; margin: 50px auto auto;" id="ap_form_box">
+    <table cellpadding='5' cellspacing='0' border='0' id='ap_table'>
+    <tr><td bgcolor="#000F91" style="padding:5px;"><table cellpadding='0' cellspacing='0' border='0' width='100%'>
+    <tr><td bgcolor="#000F91" align="center" style="position:relative;text-align:center;padding:5px 25px;padding-bottom: calc(5px + 2px);"><font size="4" color="#FFFFFF" face="comic sans ms" id="ap_form_head"><b>Registration. Please fill in the form below.</b></font></td></tr>
+    <tr><td bgcolor="#DDF8FF" style="padding:5px; text-align:center;"><br />
+    <style type="text/css"  scoped="scoped">
+      form { text-align:center; }
+      td { border:0px; text-align:left; font-family: comic sans ms; color: #333333; font-size: 1.60em; }
+      table { border:0px; margin:0px} table.center { margin-left:auto; margin-right:auto; }
+      input, select { width:100%; font-size: 1.15em; }
+      .error { font-family: comic sans ms; color: #FF0000; font-size: 1.60em; }
+      .error_note { display: block; font-family: comic sans ms; color: #FF0000; font-size: 1.60em; }
+      .error_box { border: 1px solid #FF0000; border-radius: 5px; color: #666666; }
+      .ap_footer { text-align: center; font-size:smaller; }
+    </style>
     
-    #logo {
-      margin-top: 50px;
-    }
+    <div style='display:none;' id='ap_form_err'><span id='ap_form_errmes' class='error'></span></div>
+    <div style='display:none' id='ap_form_inf'><span id='ap_form_infmes'></span></div>
+    <div class='ap_form_inp'>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcjcWQaAAAAAAqfSVUJHOCUhK-VRI74XppyGeue"></script>
+    <input type="hidden" name="action" value="reg2">
+    <center><table>
+    <tr><td>Email:</td>
+      <td><input type="email" name="_email"></td></tr>
+    <tr><td>Username:</td>
+      <td><input type="text" name="_login"></td></tr>
+    <tr><td>Password:</td>
+      <td><input type="password" name="_password"></td></tr>
+    <tr><td>Verify password:</td>
+      <td><input type="password" name="_password2"></td></tr>
+    <tr><td></td>
+      <td><input type="submit" id="ap_form_btn"></td></tr>
+    </table></center>
+    <input type="hidden" name="_validate__login" value="text:10;25">
+    <input type="hidden" name="_err__login" value="Enter username 10 - 25 Chars">
+    </form>
+    </div>
     
-    #button1, #button2 {
-      display: inline-block;
-      margin-top: 50px;
-      margin-right: 20px;
-      padding: 10px 20px;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      background-color: #0077cc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      transition: all 0.2s ease-in-out;
-    }
     
-    #button1:hover, #button2:hover {
-      background-color: #005ea2;
-      cursor: pointer;
-      transform: scale(1.1);
-    }
+    </td></tr></table></td></tr>
     
-    #signup-form {
-      margin-top: 50px;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-      background-color: white;
-    }
+    </table>
+    </div></center></font>
     
-    #signup-form label {
-      display: block;
-      margin-bottom: 10px;
-      text-align: left;
-    }
+    <script type="text/javascript" src="https://www.authpro.com/js/aform.js"></script><!--form-end-->
+    </body>
+    </html>
     
-    #signup-form input[type="text"], #signup-form input[type="password"] {
-      display: block;
-      width: 100%;
-      padding: 5px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    
-    #signup-form input[type="submit"] {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      background-color: #0077cc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      transition: all 0.2s ease-in-out;
-    }
-    
-    #signup-form input[type="submit"]:hover {
-      background-color: #005ea2;
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-    
-    .error-message {
-      color: red;
-      margin-top: 10px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-  </style>
-  
 </html>
