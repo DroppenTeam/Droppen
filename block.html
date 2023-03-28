@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <title>Droppen</title>
+    <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/-IxjmgRbvjL3etZPEihVBwohJZj-bzZNzrfwVh2Tpz8pJGfHXkLUYCHzn1GeeXN40MhimxZGeFylepo9Rxe2yXa2oSBYbPvnrRExt8YrB9oCECmL25nS0TMOT5yAdHxP7g=w1280">
+    <nav>
+        <div class="nav-buttons">
+          <a href="homepage.html"><button class="nav-button">Home</button></a>
+          <a href="#"><button class="nav-button">Games</button></a>
+          <a href="#"><button class="nav-button">Create</button></a>
+        </div>
+      </nav>
+            
+      <style>
+        nav {
+          background-color: rgb(0, 136, 255);
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 10px;
+        }
+        
+        .nav-buttons {
+          display: flex;
+          align-items: center;
+        }
+        
+        .nav-button {
+          background-color: rgb(143, 201, 255);
+          color: rgb(0, 0, 0);
+          font-size: 16px;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: transform 0.2s ease-in-out;
+          margin: 0 10px;
+        }
+        
+        .nav-button:hover {
+          transform: scale(1.1);
+        }
+      </style>
+      	<style>
+          #block {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+          }
+        </style>
+    <center> 
+    </head>
+      <body>
+        <h1>Block Clicker Game</h1>
+        <p>Click the block as many times as you can in 30 seconds!</p>
+        <div id="block"></div>
+        <p>Score: <span id="score">0</span></p>
+        <p>Time: <span id="time">30</span></p>
+        <button onclick="startGame()">Start</button>
+        <script>
+          var score = 0;
+          var time = 30;
+          var block = document.getElementById("block");
+          var scoreDisplay = document.getElementById("score");
+          var timeDisplay = document.getElementById("time");
+      
+          function startGame() {
+            score = 0;
+            time = 30;
+            scoreDisplay.innerHTML = score;
+            timeDisplay.innerHTML = time;
+            block.addEventListener("click", addPoint);
+            var timer = setInterval(countDown, 1000);
+            setTimeout(function() {
+              clearInterval(timer);
+              block.removeEventListener("click", addPoint);
+              alert("Game Over! Your score is " + score);
+            }, time * 1000);
+          }
+      
+          function addPoint() {
+            score++;
+            scoreDisplay.innerHTML = score;
+            block.style.backgroundColor = getRandomColor();
+          }
+      
+          function countDown() {
+            time--;
+            timeDisplay.innerHTML = time;
+            if (time == 0) {
+              clearInterval(timer);
+              block.removeEventListener("click", addPoint);
+              alert("Game Over! Your score is " + score);
+            }
+          }
+      
+          function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+          }
+        </script>
+      </body>
+    </center> 
