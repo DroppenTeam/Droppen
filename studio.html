@@ -8,43 +8,128 @@
         background-color: #1d1d1d;
         color: #fff;
         font-family: Arial, sans-serif;
+        display: flex;
       }
-      
-      /* Textarea styles */
-      textarea {
-        width: 100%;
-        height: 300px;
+
+      /* Container styles */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Sidebar styles */
+      .sidebar {
+        background-color: #292929;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 10px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
+        margin-right: 10px;
       }
-      
-      /* Button styles */
-      button {
-        background-color: red;
+
+      /* New code button styles */
+      .new-code {
+        width: 100%;
+        background-color: #444444;
         color: #fff;
         border: none;
         padding: 10px;
         border-radius: 5px;
         font-size: 16px;
+        margin-bottom: 10px;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.2s ease;
+      }
+
+      .new-code:hover {
+        background-color: #555555;
+      }
+
+      /* Clear, Undo, and Redo button styles */
+      .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        background-color: #444444;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      button:hover {
+        background-color: #555555;
+      }
+
+      /* Textarea and Preview styles */
+      .editor-preview {
+        display: flex;
+        flex-grow: 1;
+        width: 50%;
+        height: 80%;
+      }
+
+      .editor {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-right: 10px;
+        box-sizing: border-box;
+        background-color: #292929;
+        color: #fff;
+        resize: none;
+      }
+
+      .preview {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px;
       }
     </style>
   </head>
   <body>
-    <h1>Droppen Studio</h1>
-    <textarea id="editor"></textarea>
-    <button onclick="runCode()">Run</button>
-    
+    <div class="container">
+      <div class="sidebar">
+        <div class="new-code">
+          <span style="font-size: 20px; margin-right: 5px;">+</span>
+          <span>New Code</span>
+        </div>
+
+        <div class="button-group">
+          <button>Clear</button>
+          <button>Undo</button>
+          <button>Redo</button>
+        </div>
+      </div>
+
+      <div class="editor-preview">
+        <textarea id="editor" class="editor"></textarea>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+    </div>
+
     <script>
-      function runCode() {
-        var code = document.getElementById("editor").value;
-        var newTab = window.open();
-        newTab.document.write(code);
-      }
-    </script>
-  </body>
-</html>
+      const newCodeButton = document.querySelector('.new-code');
+      const editor = document.getElementById('editor');
+      const preview = document.getElementById('preview');
+
+      newCode
