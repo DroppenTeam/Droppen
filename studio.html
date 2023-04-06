@@ -31,6 +31,7 @@
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer;
+        margin-right: 10px;
       }
     </style>
   </head>
@@ -38,6 +39,7 @@
     <h1>Droppen Studio</h1>
     <textarea id="editor"></textarea>
     <button onclick="runCode()">Run</button>
+    <button onclick="goToUrl()">Sumbit Game</button>
     
     <script>
       function runCode() {
@@ -45,6 +47,11 @@
         var newTab = window.open();
         newTab.document.write(code);
       }
+      
+      function goToUrl() {
+        window.location.href = "https://forms.gle/sNnyvcRF1SZAxAGh7";
+      }
     </script>
   </body>
 </html>
+
