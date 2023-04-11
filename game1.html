@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spinning Block Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .game-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+        }
+
+        .block {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            cursor: pointer;
+            animation: spin 2s infinite linear;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="block" id="block" onclick="changeColor()"></div>
+    </div>
+
+    <script>
+        function changeColor() {
+            var block = document.getElementById('block');
+            var colors = ['#007bff', '#28a745', '#dc3545', '#ffc107']; // Array of colors
+            var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Randomly pick a color from the array
+            block.style.backgroundColor = randomColor; // Set the new color
+        }
+    </script>
+</body>
+</html>
